@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Ecommerce</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+
+<div class="logo">🛒 ShopEasy</div>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProduct()">
+</div>
+
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="cart.html">Cart</a>
+<a href="orders.html">Orders</a>
+<button onclick="logout()">Logout</button>
+</div>
+
+</div>
+
+
+<!-- ================= CATEGORY ================= -->
+<h3 class="section-title">Shop by Category</h3>
+
+<div class="category-container">
+
+<div class="category-card" onclick="loadCategory('Fruits')">🍎 Fruits</div>
+<div class="category-card" onclick="loadCategory('Electronics')">💻 Electronics</div>
+<div class="category-card" onclick="loadCategory('Home')">🏠 Home</div>
+<div class="category-card" onclick="loadCategory('Fashion')">👕 Fashion</div>
+<div class="category-card" onclick="loadCategory('Sports')">⚽ Sports</div>
+
+</div>
+
+
+<!-- ================= FILTER ================= -->
+<div class="top-controls">
+
+<select id="priceFilter" onchange="filterPrice()">
+<option value="">Sort by Price</option>
+<option value="100">Below ₹100</option>
+<option value="1000">Below ₹1000</option>
+<option value="10000">Below ₹10000</option>
+</select>
+
+</div>
+
+
+<!-- ================= ADD PRODUCT ================= -->
+<div class="add-product-card">
+
+<h3>Add New Product</h3>
+
+<input type="text" id="name" placeholder="Product Name">
+<input type="number" id="price" placeholder="Price">
+<input type="text" id="category" placeholder="Category">
+
+<button onclick="addProduct()">Add Product</button>
+
+</div>
+
+
+<!-- ================= PRODUCTS ================= -->
+<h3 class="section-title">Products</h3>
+
+<div id="productList" class="product-container"></div>
+
+
+<!-- ================= AUTH CHECK ================= -->
+<script>
+const user = localStorage.getItem("user");
+
+if(!user){
+window.location.href = "login.html";
+}
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
