@@ -142,11 +142,11 @@ res.json(result);
 // delete one item using cart id
 app.post("/remove-from-cart",(req,res)=>{
 
-const {product_id} = req.body;
+const {product_id, user_id} = req.body;
 
-const sql = "DELETE FROM cart WHERE id=?";
+const sql = "DELETE FROM cart WHERE product_id=? AND user_id=?";
 
-db.query(sql,[product_id],(err,result)=>{
+db.query(sql,[product_id, user_id],(err)=>{
 
 if(err){
 return res.send(err);
@@ -239,9 +239,9 @@ app.post("/signup",(req,res)=>{
 
 const {username,password} = req.body;
 
-const sql = "INSERT INTO users (username,password) VALUES (?,?)";
+const sql = "INSERT INTO users (username,password,role) VALUES (?,?,?)";
 
-db.query(sql,[username,password],(err,result)=>{
+db.query(sql,[username,password,"user"],(err,result)=>{
 
 if(err){
 return res.send(err);
@@ -307,7 +307,7 @@ db.query(checkSql,[product_id,user_id],(err,result)=>{
 
 if(err) return res.send(err);
 
-if(result[0].quantity > 1){
+if(result.length > 0 && result[0].quantity > 1){
 
 const sql = "UPDATE cart SET quantity = quantity - 1 WHERE product_id=? AND user_id=?";
 
