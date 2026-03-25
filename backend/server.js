@@ -1,4 +1,5 @@
 // ================= IMPORTS =================
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const db = require("./db");
@@ -12,8 +13,7 @@ app.use(express.json());
 const path = require("path");
 
 // correct absolute path
-app.use("/images", express.static(path.join(__dirname, "../frontend/images")));
-
+app.use("/images", express.static(path.join(__dirname, "images")));
 // ================= ROOT API =================
 // check server working
 app.get("/", (req,res)=>{
@@ -230,9 +230,9 @@ res.send("Product deleted");
 
 
 // ================= SERVER START =================
-app.listen(5000, ()=>{
-console.log("Server running on port 5000");
-});
+//app.listen(5000, ()=>{
+//console.log("Server running on port 5000");
+//});
 
 // ================= SIGNUP API =================
 app.post("/signup",(req,res)=>{
