@@ -8,7 +8,7 @@ window.location.href = "login.html";
 return;
 }
 
-fetch(`http://localhost:5000/orders/${user.id}`)
+fetch(`https://ecom-production-2600.up.railway.app/orders/${user.id}`)
 .then(res=>res.json())
 .then(data=>{
 

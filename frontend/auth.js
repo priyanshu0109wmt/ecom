@@ -3,7 +3,7 @@ function signup(){
 const username = document.getElementById("username").value;
 const password = document.getElementById("password").value;
 
-fetch("http://localhost:5000/signup",{
+fetch("https://ecom-production-2600.up.railway.app/signup",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -23,7 +23,7 @@ function login(){
 const username = document.getElementById("username").value;
 const password = document.getElementById("password").value;
 
-fetch("http://localhost:5000/login",{
+fetch("https://ecom-production-2600.up.railway.app/login",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"

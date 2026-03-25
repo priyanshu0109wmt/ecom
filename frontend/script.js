@@ -5,7 +5,7 @@ const name = document.getElementById("name").value;
 const price = document.getElementById("price").value;
 const category = document.getElementById("category").value;
 
-fetch("http://localhost:5000/add-product",{
+fetch("https://ecom-production-2600.up.railway.app/add-product",{
 
 method:"POST",
 
@@ -38,7 +38,7 @@ document.getElementById("category").value="";
 /* ================= LOAD ALL PRODUCTS ================= */
 function loadProducts(){
 
-fetch("http://localhost:5000/products")
+fetch("https://ecom-production-2600.up.railway.app/products")
 
 .then(res=>res.json())
 
@@ -65,7 +65,7 @@ deleteBtn = `<button onclick="deleteProduct(${product.id})">Delete</button>`;
 
 html += `
 <div class="product-card">
-<img src="http://localhost:5000/images/${product.image}" alt="product">
+<img src="https://ecom-production-2600.up.railway.app/images/${product.image}" alt="product">
 <h3>${product.name}</h3>
 <p>₹${product.price}</p>
 <button onclick="addToCart(${product.id})">Add to Cart</button>
@@ -89,7 +89,7 @@ console.log("Error loading products:", err);
 /* ================= LOAD CATEGORY PRODUCTS ================= */
 function loadCategory(category){
 
-fetch("http://localhost:5000/products")
+fetch("https://ecom-production-2600.up.railway.app/products")
 
 .then(res=>res.json())
 
@@ -117,7 +117,7 @@ deleteBtn = `<button onclick="deleteProduct(${product.id})">Delete</button>`;
 
 html += `
 <div class="product-card">
-<img src="http://localhost:5000/images/${product.image}" alt="product">
+<img src="https://ecom-production-2600.up.railway.app/images/${product.image}" alt="product">
 <h3>${product.name}</h3>
 <p>₹${product.price}</p>
 <button onclick="addToCart(${product.id})">Add to Cart</button>
@@ -146,7 +146,7 @@ function addToCart(id){
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-fetch("http://localhost:5000/add-to-cart",{
+fetch("https://ecom-production-2600.up.railway.app/add-to-cart",{
 
 method:"POST",
 
@@ -169,7 +169,7 @@ user_id:user.id
 /* ================= DELETE PRODUCT ================= */
 function deleteProduct(id){
 
-fetch("http://localhost:5000/delete-product",{
+fetch("https://ecom-production-2600.up.railway.app/delete-product",{
 
 method:"POST",
 
@@ -213,7 +213,7 @@ function searchProduct(){
 
 const keyword = document.getElementById("searchInput").value.toLowerCase();
 
-fetch("http://localhost:5000/products")
+fetch("https://ecom-production-2600.up.railway.app/products")
 .then(res=>res.json())
 .then(data=>{
 
@@ -228,7 +228,7 @@ found = true;
 
 html += `
 <div class="product-card">
-<img src="http://localhost:5000/images/${product.image}" alt="product">
+<img src="https://ecom-production-2600.up.railway.app/images/${product.image}" alt="product">
 <h3>${product.name}</h3>
 <p>₹${product.price}</p>
 <button onclick="addToCart(${product.id})">Add to Cart</button>
@@ -255,7 +255,7 @@ function filterPrice(){
 
 const value = document.getElementById("priceFilter").value;
 
-fetch("http://localhost:5000/products")
+fetch("https://ecom-production-2600.up.railway.app/products")
 .then(res=>res.json())
 .then(data=>{
 
@@ -279,7 +279,7 @@ found = true;
 
 html += `
 <div class="product-card">
-<img src="http://localhost:5000/images/${product.image}">
+<img src="https://ecom-production-2600.up.railway.app/images/${product.image}">
 <h3>${product.name}</h3>
 <p>₹${product.price}</p>
 <button onclick="addToCart(${product.id})">Add to Cart</button>

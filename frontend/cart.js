@@ -3,7 +3,7 @@ function loadCart(){
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-fetch(`http://localhost:5000/cart/${user.id}`)
+fetch(`https://ecom-production-2600.up.railway.app/cart/${user.id}`)
 
 .then(res=>res.json())
 
@@ -26,7 +26,7 @@ total += item.price * item.quantity;
 html += `
 <div class="cart-card">
 
-<img src="http://localhost:5000/images/${item.image}" class="cart-img">
+<img src="https://ecom-production-2600.up.railway.app/images/${item.image}" class="cart-img">
 <div class="cart-info">
 <h3>${item.name}</h3>
 <p>₹${item.price}</p>
@@ -66,7 +66,7 @@ function updateQuantity(product_id, action){
 
 const user = JSON.parse(localStorage.getItem("user"));
 
-fetch("http://localhost:5000/update-cart",{
+fetch("https://ecom-production-2600.up.railway.app/update-cart",{
 
 method:"POST",
 
@@ -104,7 +104,7 @@ window.location.href = "login.html";
 return;
 }
 
-fetch("http://localhost:5000/checkout",{
+fetch("https://ecom-production-2600.up.railway.app/checkout",{
 
 method:"POST",
 
