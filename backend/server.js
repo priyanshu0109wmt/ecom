@@ -1,4 +1,8 @@
 // ================= IMPORTS =================
+app.get("/health", (req, res) => {
+  res.send("OK");
+});
+
 require("dotenv").config();
 
 const express = require("express");
