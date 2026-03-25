@@ -1,8 +1,4 @@
 // ================= IMPORTS =================
-app.get("/health", (req, res) => {
-  res.send("OK");
-});
-
 require("dotenv").config();
 
 const express = require("express");
@@ -10,10 +6,17 @@ const cors = require("cors");
 const path = require("path");
 const db = require("./db");
 
+// ================= APP INIT =================
 const app = express();
 
+// ================= MIDDLEWARE =================
 app.use(cors());
 app.use(express.json());
+
+// ================= HEALTH ROUTE =================
+app.get("/health", (req, res) => {
+  res.send("OK");
+});
 
 // ================= STATIC IMAGES =================
 app.use("/images", express.static(path.join(__dirname, "images")));
