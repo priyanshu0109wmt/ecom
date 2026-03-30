@@ -1,43 +1,48 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 <title>Cart</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+<body class="page-cart">
+<div class="site-shell">
+  <header class="navbar">
+    <a class="logo" href="index.html">ShopEasy</a>
+    <div class="search-box search-box-placeholder">
+      <span>Your saved items and checkout summary</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="orders.html">Orders</a>
+      <button type="button" onclick="logout()">Logout</button>
+    </nav>
+  </header>
 
-<body>
+  <main class="page-content page-content-narrow">
+    <section class="page-header">
+      <span class="eyebrow">Cart overview</span>
+      <h1>Review your items before checkout.</h1>
+      <p>Adjust quantities, watch your total update instantly, and place your order when you're ready.</p>
+    </section>
 
-<div class="navbar">
-
-<h2>My Ecommerce</h2>
-
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="cart.html">Cart</a>
-<a href="orders.html">Orders</a>
-<a href="login.html">Login</a>
-<a href="signup.html">Signup</a>
-<button onclick="logout()">Logout</button>
-
+    <section id="cartItems" class="cart-items-layout"></section>
+  </main>
 </div>
 
-</div>
-
-<h1>My Cart</h1>
-
-<div id="cartItems"></div>
-
+<div id="toastContainer" class="toast-container"></div>
 
 <script>
 const user = localStorage.getItem("user");
-
 if(!user){
 window.location.href = "login.html";
 }
 </script>
 <script src="cart.js"></script>
-
 </body>
-
 </html>

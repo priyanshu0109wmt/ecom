@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 <title>Signup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+<body class="auth-page">
+<div class="auth-page-layout">
+  <section class="auth-showcase">
+    <span class="eyebrow">Create your account</span>
+    <h1>Join ShopEasy and start exploring products with a smoother shopping experience.</h1>
+    <p>Sign up once to save your cart, place orders, and move through the storefront with less friction.</p>
+  </section>
 
-<body>
+  <section class="auth-container">
+    <div class="card-heading">
+      <h2>Create Account</h2>
+      <p class="sub-text">Signup to get started</p>
+    </div>
 
-<div class="auth-container">
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
 
-<h2>Create Account 🚀</h2>
-<p class="sub-text">Signup to get started</p>
+    <button type="button" onclick="signup(this)">Signup</button>
 
-<input type="text" id="username" placeholder="Enter Username">
-<input type="password" id="password" placeholder="Enter Password">
-
-<button type="button" onclick="signup()">Signup</button>
-
-<p class="switch-text">
-Already have an account? <a href="login.html">Login</a>
-</p>
-
+    <p class="switch-text">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </section>
 </div>
 
+<div id="toastContainer" class="toast-container"></div>
 <script src="auth.js"></script>
-
 </body>
-
 </html>

@@ -1,33 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
 <title>Orders</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+<body class="page-orders">
+<div class="site-shell">
+  <header class="navbar">
+    <a class="logo" href="index.html">ShopEasy</a>
+    <div class="search-box search-box-placeholder">
+      <span>Your recent purchases and order history</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="orders.html">Orders</a>
+      <button type="button" onclick="logout()">Logout</button>
+    </nav>
+  </header>
 
-<body>
+  <main class="page-content page-content-narrow">
+    <section class="page-header">
+      <span class="eyebrow">Order history</span>
+      <h1>Track every purchase in one place.</h1>
+      <p>See the total and timestamp for your previous checkouts with a cleaner order summary layout.</p>
+    </section>
 
-<div class="navbar">
-
-<h2>My Ecommerce</h2>
-
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="cart.html">Cart</a>
-<a href="orders.html">Orders</a>
-<a href="login.html">Login</a>
-<a href="signup.html">Signup</a>
+    <section id="orders" class="order-container"></section>
+  </main>
 </div>
 
-</div>
-
-<h1>My Orders</h1>
-
-<div id="orders" class="order-container"></div>
-<button onclick="logout()">Logout</button>
+<div id="toastContainer" class="toast-container"></div>
 <script src="orders.js"></script>
-
 </body>
-
 </html>
